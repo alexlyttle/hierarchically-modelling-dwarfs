@@ -1,0 +1,19 @@
+{
+    "name": "network_05",
+    "model_filename": "network_05_model.h5",
+    "history_filename": "network_05_history.csv",
+    "optimizer": "nadam",
+    "loss": "mse",
+    "metrics": [
+        "mae"
+    ],
+    "x_cols": [],
+    "y_cols": [],
+    "depth": 5,
+    "width": 256,
+    "activation": "relu",
+    "batch_size": 9837,
+    "regularization_l2": 1e-09,
+    "x_dims": 5,
+    "y_dims": 5
+}

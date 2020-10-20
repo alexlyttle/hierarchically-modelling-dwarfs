@@ -1,0 +1,31 @@
+{
+    "name": "network_10",
+    "model_filename": "network_10_model.h5",
+    "history_filename": "network_10_history.csv",
+    "optimizer": "<tensorflow.python.keras.optimizer_v2.gradient_descent.SGD object at 0x7fd9c0d23978>",
+    "loss": "mae",
+    "metrics": [
+        "mae"
+    ],
+    "x_cols": [
+        "frac_evol_norm",
+        "initial_mass_norm",
+        "initial_MLT_norm",
+        "initial_Yinit_norm",
+        "initial_Zinit_norm"
+    ],
+    "y_cols": [
+        "log_star_age_norm",
+        "effective_T_norm",
+        "radius_norm",
+        "delta_nu_fit_norm",
+        "star_feh_norm"
+    ],
+    "depth": 6,
+    "width": 128,
+    "activation": "elu",
+    "batch_size": 15472,
+    "regularization_l2": 1e-06,
+    "x_dims": 5,
+    "y_dims": 5
+}

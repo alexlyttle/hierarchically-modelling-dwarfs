@@ -1,0 +1,31 @@
+{
+    "name": "network_04",
+    "model_filename": "network_04_model.h5",
+    "history_filename": "network_04_history.csv",
+    "optimizer": "nadam",
+    "loss": "mae",
+    "metrics": [
+        "mse"
+    ],
+    "x_cols": [
+        "log_frac_age_norm",
+        "log_initial_mass_norm",
+        "log_initial_MLT_norm",
+        "log_initial_Yinit_norm",
+        "log_initial_Zinit_norm"
+    ],
+    "y_cols": [
+        "log_star_age_norm",
+        "log_effective_T_norm",
+        "log_radius_norm",
+        "log_delta_nu_fit_norm",
+        "star_feh_norm"
+    ],
+    "depth": 6,
+    "width": 128,
+    "activation": "elu",
+    "batch_size": 8027,
+    "regularization_l2": 0.0,
+    "x_dims": 5,
+    "y_dims": 5
+}

@@ -1,0 +1,15 @@
+column,norm_column,loc,scale
+log_frac_age,log_frac_age_norm,-0.069,1.0
+log_initial_mass,log_initial_mass_norm,0.0,1.0
+log_initial_MLT,log_initial_MLT_norm,0.279,1.0
+initial_feh,initial_feh_norm,0.0,1.0
+log_initial_Yinit,log_initial_Yinit_norm,-0.553,1.0
+log_initial_Z,log_initial_Z_norm,-1.893,1.0
+frac_he_core_mass,frac_he_core_mass_norm,0.0,1.0
+log_star_age,log_star_age_norm,0.742,1.0
+log_effective_T,log_effective_T_norm,3.753,1.0
+log_radius,log_radius_norm,0.095,1.0
+log_delta_nu_fit,log_delta_nu_fit_norm,1.991,1.0
+star_feh,star_feh_norm,-0.095,1.0
+log_surface_he4,log_surface_he4_norm,-0.624,1.0
+log_surface_Z,log_surface_Z_norm,-1.956,1.0

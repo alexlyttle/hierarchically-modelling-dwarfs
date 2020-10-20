@@ -1,0 +1,11 @@
+column,norm_column,loc,scale
+frac_evol,frac_evol_norm,0.865,0.651
+initial_mass,initial_mass_norm,1.0,0.118
+initial_MLT,initial_MLT_norm,1.9,0.338
+initial_Yinit,initial_Yinit_norm,0.28,0.028
+initial_Zinit,initial_Zinit_norm,0.017,0.011
+log_star_age,log_star_age_norm,0.79,0.467
+effective_T,effective_T_norm,5566.772,601.172
+radius,radius_norm,1.224,0.503
+delta_nu_fit,delta_nu_fit_norm,100.72,42.582
+star_feh,star_feh_norm,0.081,0.361

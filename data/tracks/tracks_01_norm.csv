@@ -1,0 +1,11 @@
+column,norm_column,loc,scale
+log_frac_age,log_frac_age_norm,-0.07559089224286904,1.0
+log_initial_mass,log_initial_mass_norm,-0.004364805402450088,1.0
+initial_feh,initial_feh_norm,0.0,1.0
+log_initial_MLT,log_initial_MLT_norm,0.2787536009528289,1.0
+log_initial_Yinit,log_initial_Yinit_norm,-0.5528419686577808,1.0
+log_star_age,log_star_age_norm,0.7335865362594696,1.0
+log_effective_T,log_effective_T_norm,3.75273551251174,1.0
+log_radius,log_radius_norm,0.09225826054835193,1.0
+log_delta_nu_fit,log_delta_nu_fit_norm,1.9950350812534134,1.0
+star_feh,star_feh_norm,-0.09486574518397003,1.0
