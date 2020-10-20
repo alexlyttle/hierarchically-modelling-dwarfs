@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+.venv/
+.virtualenv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Development environment
+.vscode/
+
+# MacOS
+.DS_Store
+._.DS_Store
+
+# Latex
+*.aux
+*.fdb_latexmk
+*.fls
+paper/*.log
+paper/*.out
+plan/*.log
+plan/*.out
+*.synctex.gz
+*.bbl
+*.blg
+*.cls
+*.bst
+
+# Scripts
+jupyter.sh
+jupyter.out
+slurm*
+tensorboard.sh
+star*.sh
+core*
+
+# Theano
+.theano/
+
+# Data
+logs/
+trace/
+output/
+
+# Misc
+*.bak
+*.sav
