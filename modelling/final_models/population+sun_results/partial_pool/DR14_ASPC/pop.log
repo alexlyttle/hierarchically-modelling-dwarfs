@@ -1,0 +1,9 @@
+2020-08-25 08:49:57,750: INFO: Fitting population for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-25 09:37:31,515: WARNING: The number of effective samples was less than 10% for 502 parameters.
+2020-08-25 09:37:31,523: WARNING: The number of effective samples was less than 25% for 894 parameters.
+2020-08-25 12:29:19,521: INFO: Fitting population for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-25 13:17:03,364: WARNING: The number of effective samples was less than 10% for 537 parameters.
+2020-08-25 13:17:03,371: WARNING: The number of effective samples was less than 25% for 888 parameters.
+2020-08-25 16:37:47,963: INFO: Fitting population for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-25 17:25:30,611: WARNING: The number of effective samples was less than 10% for 502 parameters.
+2020-08-25 17:25:30,618: WARNING: The number of effective samples was less than 25% for 894 parameters.

@@ -1,0 +1,13 @@
+2020-08-18 15:54:51,726: INFO: Fitting star for 1000 samples across 10 chains with 1000 burn in steps per chain.
+2020-08-18 15:54:51,753: WARNING: From /rds/homes/a/ajl573/.virtualenvs/stellr/lib/python3.7/site-packages/pymc4/inference/sampling.py:169: compile (from tensorflow.python.compiler.xla.xla) is deprecated and will be removed in a future version.
+Instructions for updating:
+xla.experimental.compile is deprecated. Consider using tf.function(experimental_compile=True)
+2020-08-18 16:02:59,060: WARNING: There were 3 divergences after burn_in. Increase target_accept_prob or reparameterize.
+2020-08-18 16:02:59,250: WARNING: The number of effective samples was less than 25% for 20 parameters.
+2020-08-24 16:46:57,153: INFO: Fitting star for 1000 samples across 10 chains with 1000 burn in steps per chain.
+2020-08-24 16:46:57,168: WARNING: From /rds/homes/a/ajl573/.virtualenvs/stellr/lib/python3.7/site-packages/pymc4/inference/sampling.py:169: compile (from tensorflow.python.compiler.xla.xla) is deprecated and will be removed in a future version.
+Instructions for updating:
+xla.experimental.compile is deprecated. Consider using tf.function(experimental_compile=True)
+2020-08-24 16:54:55,055: WARNING: There were 2 divergences after burn_in. Increase target_accept_prob or reparameterize.
+2020-08-24 16:54:55,247: WARNING: The number of effective samples was less than 10% for 3 parameters.
+2020-08-24 16:54:55,251: WARNING: The number of effective samples was less than 25% for 19 parameters.

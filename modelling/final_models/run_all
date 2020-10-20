@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for filename in star_scripts/*.sh; do
+  sbatch $filename
+done
+
+echo Done.
+

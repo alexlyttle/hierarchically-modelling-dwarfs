@@ -1,0 +1,6 @@
+2020-08-19 15:14:36,146 stellr.optimizer INFO     Fitting stars for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-19 15:48:56,860 stellr.optimizer WARNING  The number of effective samples was less than 10% for 953 parameters.
+2020-08-19 15:48:56,865 stellr.optimizer WARNING  The number of effective samples was less than 25% for 1148 parameters.
+2020-08-24 16:39:31,514: INFO: Fitting stars for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-24 17:14:03,608: WARNING: The number of effective samples was less than 10% for 976 parameters.
+2020-08-24 17:14:03,614: WARNING: The number of effective samples was less than 25% for 1174 parameters.

@@ -1,0 +1,9 @@
+2020-08-18 15:50:57,612: INFO: Fitting star for 1000 samples across 10 chains with 1000 burn in steps per chain.
+2020-08-18 15:50:57,640: WARNING: From /rds/homes/a/ajl573/.virtualenvs/stellr/lib/python3.7/site-packages/pymc4/inference/sampling.py:169: compile (from tensorflow.python.compiler.xla.xla) is deprecated and will be removed in a future version.
+Instructions for updating:
+xla.experimental.compile is deprecated. Consider using tf.function(experimental_compile=True)
+2020-08-18 15:54:36,640: WARNING: The number of effective samples was less than 25% for 3 parameters.
+2020-08-24 16:43:16,942: INFO: Fitting star for 1000 samples across 10 chains with 1000 burn in steps per chain.
+2020-08-24 16:43:16,956: WARNING: From /rds/homes/a/ajl573/.virtualenvs/stellr/lib/python3.7/site-packages/pymc4/inference/sampling.py:169: compile (from tensorflow.python.compiler.xla.xla) is deprecated and will be removed in a future version.
+Instructions for updating:
+xla.experimental.compile is deprecated. Consider using tf.function(experimental_compile=True)

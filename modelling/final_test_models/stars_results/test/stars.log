@@ -1,0 +1,3 @@
+2020-08-24 10:34:28,086: INFO: Fitting stars for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-24 11:11:00,696: WARNING: The number of effective samples was less than 10% for 21 parameters.
+2020-08-24 11:11:00,701: WARNING: The number of effective samples was less than 25% for 1303 parameters.

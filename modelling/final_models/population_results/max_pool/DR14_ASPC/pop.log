@@ -1,0 +1,7 @@
+2020-08-25 13:37:46,915: INFO: Fitting population for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-25 14:18:24,409: WARNING: The number of effective samples was less than 10% for 307 parameters.
+2020-08-25 14:18:24,415: WARNING: The number of effective samples was less than 25% for 676 parameters.
+2020-08-25 14:44:29,143: INFO: Fitting population for 2000 samples across 10 chains with 2000 burn in steps per chain.
+2020-08-25 15:25:52,999: WARNING: There were 1 divergences after burn_in. Increase target_accept_prob or reparameterize.
+2020-08-25 15:26:05,847: WARNING: The number of effective samples was less than 10% for 299 parameters.
+2020-08-25 15:26:05,852: WARNING: The number of effective samples was less than 25% for 678 parameters.
