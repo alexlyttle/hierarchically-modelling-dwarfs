@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+seaborn
+tensorflow
+pymc3
+theano
+corner
+daft

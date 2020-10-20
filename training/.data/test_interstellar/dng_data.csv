@@ -1,0 +1,4 @@
+name,depth,width,activation,batch_size,regularization_l2,model_filename,history_filename,mae,mse
+dng_0,2,8,elu,16,0.0001,dng_0_model.h5,dng_0_history.csv,0.010943468511104584,0.00015836389502510428
+dng_1,3,8,elu,16,0.0001,dng_1_model.h5,dng_1_history.csv,0.012599836438894271,0.00017625960754230618
+dng_2,4,8,elu,16,0.0001,dng_2_model.h5,dng_2_history.csv,0.010657786130905152,9.48765518842265e-05
