@@ -394,7 +394,7 @@ The validation dataset contained $\sim \num{2e6}$ models evolved in the same way
 
 \begin{table}
 	\centering
-	\caption{The median error, $\mu_{1/2}$ and median absolute deviation of the error, $\sigma_\mathrm{MAD} = 1.4826\cdot\mathrm{median}(|E(x) - \mu_{1/2}|)$, for each output, $x$, where $E(x)$ is the error given in the first column and $\delta x = x_\mathrm{pred} - x_\mathrm{true}$. All parameters are outputs of the ANN except for $L$ which is derived.}
+	\caption{The median error, $\mu_{1/2}$ and median absolute deviation of the error, $\sigma_\mathrm{MAD} = 1.4826\cdot\mathrm{median}(|E(x) - \mu_{1/2}|)$ for a given parameter, $x$, derived from the output of the ANN. The error, $E(x)$, is given in the first column and $\delta x$ is the truth provided by the validation dataset subtracted from the ANN prediction. Fractional errors are given as percentages (\%).}
 	\label{tab:validation}
     \input{validation}    
 \end{table}
