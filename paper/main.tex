@@ -629,7 +629,7 @@ In Table \ref{tab:np}, we preset results for the remaining 65 stars from the NP 
 
 \begin{table*}
 	\centering
-	\caption{The median of the marginalised posterior samples for each parameter output by the NP model, with their respective upper and lower 68 per cent confidence intervals. For the full table, see online.}
+	\caption{The median of the marginalised posterior samples for each parameter output by the NP model, with their respective upper and lower 68 per cent credible intervals. For the full table, see online.}
 	\label{tab:np}
 	\input{stars_outputs_NP.tex}
 \end{table*}
@@ -1070,14 +1070,28 @@ Figure \ref{fig:test-corners-mp} shows the hyperparameter results for the MP mod
 
 \section{The solar calibrator}\label{sec:sun-res}
 
-We found that our model consistently recovers the Sun when modelled in each of the NP, PP and MP models. We show the marginal and joint posterior distributions for the solar parameters from the PPS model in the corner plot in Figure \ref{fig:sun-results}.
+We found that our model consistently recovers the Sun when modelled in each of the NP, PP and MP models. In Table \ref{tab:sun-out} we present the results for the Sun as a star from the NP model to show what we obtain without the influence of any other stars in the sample. We show the marginal and joint posterior distributions for the solar parameters from the NP model in the corner plot in Figure \ref{fig:sun-results}.
 
+\begin{table}
+    \centering
+    \caption{Solar results from the NP model. The second column shows the median marginalised posterior samples for each parameter with their respective upper and lower 68 per cent credible intervals.}
+    \label{tab:sun-out}
+    \input{sun_outputs.tex}
+\end{table}
+
+% \begin{figure*}
+%     \centering
+%     \includegraphics[width=\textwidth]{../modelling/final_models/population+sun_results/partial_pool/DR14_ASPC/population/stars/corner_plot_SUN.png}
+%     \caption{A corner plot showing the sampled marginal and joint posterior distributions for the Sun as a part of the PPS model.}
+%     \label{fig:sun-results}
+% \end{figure*}
 \begin{figure*}
     \centering
-    \includegraphics[width=\textwidth]{../modelling/final_models/population+sun_results/partial_pool/DR14_ASPC/population/stars/corner_plot_SUN.png}
-    \caption{A corner plot showing the sampled marginal and joint posterior distributions for the Sun as a part of the PPS model.}
+    \includegraphics[width=\textwidth]{../modelling/final_models/sun_results/SUN/star/corner_plot_2.png}
+    \caption{A corner plot showing the sampled marginal and joint posterior distributions for the Sun as a part of the NP model.}
     \label{fig:sun-results}
 \end{figure*}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
