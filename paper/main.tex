@@ -994,21 +994,21 @@ In Figure \ref{fig:shrinkage} we also see a similar reduction in uncertainty for
 
 \subsection{Population parameters}
 
-In Figure \ref{fig:test-corners-np}, we show the joint posterior distributions for the hyperparameters of the PP model fit to the results of the NP model. We see that this method appears to recover the true values well. However, fitting the model this way does not benefit from the same uncertainty reduction on the stellar parameters as shown in the pooled models. Furthermore, the uncertainties on the individual stellar parameters were found to be unreliable due to boundary effects from the prior. This likely means that the uncertainties on the hyperparameter results for the NP model were underestimated.
+% In Figure \ref{fig:test-corners-np}, we show the joint posterior distributions for the hyperparameters of the PP model fit to the results of the NP model. We see that this method appears to recover the true values well. However, fitting the model this way does not benefit from the same uncertainty reduction on the stellar parameters as shown in the pooled models. Furthermore, the uncertainties on the individual stellar parameters were found to be unreliable due to boundary effects from the prior. This likely means that the uncertainties on the hyperparameter results for the NP model were underestimated.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{../modelling/final_test_models/stars_results/test/corner_plot_truths.png}
-    \caption{Corner plot showing the marginalised and joint posterior distributions between the NP model parameters for the synthetic stars. The true values are shown by the blue lines.}   
-    \label{fig:test-corners-np} 
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\linewidth]{../modelling/final_test_models/stars_results/test/corner_plot_truths.png}
+%     \caption{Corner plot showing the marginalised and joint posterior distributions between the NP model parameters for the synthetic stars. The true values are shown by the blue lines.}   
+%     \label{fig:test-corners-np} 
+% \end{figure}
 
 In Figure \ref{fig:test-corners-pp}, we see that the PP model also recovers the hyperparameter truths well, with some noise due to random realisation error. Fitting the model this way has the added benefit over the NP model of improving the inference of the individual stellar parameters, as shown in the previous two sections. We also found that when we ran the PP model with 10 and 50 stars, the uncertainties on the hyperparameters also shrank with increasing $N_\mathrm{stars}$.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../modelling/final_test_models/population_results/test_100/population/corner_plot_truths.png}
-    \caption{The same as Figure \ref{fig:test-corners-np} but for the PP model.}  
+    \caption{Corner plot showing the marginalised and joint posterior distributions between the PP model hyperparameters for 100 synthetic stars. The true values are shown by the blue lines.}  
     \label{fig:test-corners-pp}   
 \end{figure}
 
@@ -1017,7 +1017,7 @@ Figure \ref{fig:test-corners-mp} shows the hyperparameter results for the MP mod
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../modelling/final_test_models/population_results/test_max_pool/population/corner_plot_truths.png}
-    \caption{The same as Figure \ref{fig:test-corners-np} but for the MP model.}
+    \caption{The same as Figure \ref{fig:test-corners-pp} but for the MP model.}
     \label{fig:test-corners-mp} 
 \end{figure}
 
