@@ -104,12 +104,12 @@ Guy R. Davies,$^{1,2}$
 Tanda Li,$^{1,2}$
 Lindsey M. Carboneau,$^{1,2}$
 \newauthor
-Oliver J. Hall,$^{1,2}$
 Hin Leung,$^{1,2,3}$
 Harry Westwood,$^{1,2}$
 William J. Chaplin,$^{1,2}$
-Daniel Huber,
+Oliver J. Hall,$^{4}$
 \newauthor
+Daniel Huber,
 Andrea Miglio,$^{1,2}$
 Martin B. Nielsen,$^{1,2}$
 and To B. Confirmed
@@ -118,6 +118,7 @@ and To B. Confirmed
 $^{1}$School of Physics and Astronomy, University of Birmingham, Birmingham, B15 2TT, UK\\
 $^{2}$Stellar Astrophysics Centre (SAC), Department of Physics and Astronomy, Aarhus University, Ny Munkegade 120, DK-8000 Aarhus C, Denmark\\
 $^{3}$School of Physics and Astronomy, University of St Andrews, North Haugh, St Andrews, KY16 9SS, UK\\
+$^{4}$European Space Agency (ESA), European Space Research and Technology Centre (ESTEC), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands\\
 }
 
 % These dates will be filled out by the publisher
@@ -326,7 +327,7 @@ where $\boldsymbol{W}_k$ is the matrix of weights leading to all neurons in the 
 %
 We also restricted our configuration to an ANN with the same number of neurons, $N$ in each hidden layer. Hereafter, we refer to our choice of neurons per layer, $N$ and hidden layers, $H$ as the \emph{architecture}. 
 
-To fit the ANN, we used a set of training data, $\boldsymbol{D}_\mathrm{train} = \{(\boldsymbol{X}_1, \boldsymbol{Y}_1) \dots (\boldsymbol{X}_{N_\mathrm{train}}, \boldsymbol{Y}_{N_\mathrm{train}})\}$ comprising $N_\mathrm{train}$ input-output pairs. We split the training data into pseudo-random batches, $\boldsymbol{D}_\mathrm{batch}$ because this has been shown to improve ANN stability and computational efficiency \citep{Masters.Luschi2018}. The set of predictions made for each batch is evaluated with an error function, $E(\boldsymbol{D}_\mathrm{batch})$, also known as the \emph{loss} which quantifies the difference between the training data and predictions. We also considered an addition to the loss called \emph{regularisation} which helps reduce over-fitting \citep{Goodfellow.Bengio.ea2016}. During fitting, the weights are updated after each batch using an algorithm called the \emph{optimizer}, back-propagating the error with the goal of minimising the loss.
+To fit the ANN, we used a set of training data, $\boldsymbol{D}_\mathrm{train} = \{(\boldsymbol{X}_1, \boldsymbol{Y}_1) \dots (\boldsymbol{X}_{N_\mathrm{train}}, \boldsymbol{Y}_{N_\mathrm{train}})\}$ comprising $N_\mathrm{train}$ input-output pairs. We split the training data into pseudo-random batches, $\boldsymbol{D}_\mathrm{batch}$ because this has been shown to improve ANN stability and computational efficiency \citep{Masters.Luschi2018}. The set of predictions made for each batch is evaluated with an error function, $E(\boldsymbol{D}_\mathrm{batch})$, also known as the \emph{loss} which quantifies the difference between the training data and predictions. We also considered an addition to the loss called \emph{regularisation} which helps reduce over-fitting \citep{Goodfellow.Bengio.ea2016}. During fitting, the weights are updated after each batch using an algorithm called the \emph{optimizer}, back-propagating the error with the goal of minimising the loss \citep[see e.g.][]{Rumelhart.Hinton.ea1986}.
 
 We trained the ANN using \textsc{TensorFlow} \citep{Abadi.Barham.ea2016}. We varied the architecture, number of batches, choice of loss function, optimizer and regularisation during the optimisation phase. For each set of ANN parameters, we initialised the ANN with a random set of weights and biases and minimized the loss over a given number of \emph{epochs}. An epoch is defined as one iteration through the entire training dataset, $\boldsymbol{D}_\mathrm{train}$. We tracked the loss for each ANN using an independent test dataset to determine the most effective choice of ANN parameters (see Section \ref{sec:opt}).
 
@@ -596,7 +597,7 @@ For both the PP and MP models, we ran versions with and without data for the Sun
 
 \subsection{Sampling}
 
-We obtained results for each of the models described above by sampling their posterior distributions using a Markov chain Monte Carlo (MCMC) algorithm. In particular, we used the NUTS algorithm implemented in \textsc{TensorFlow Probability} \citep[\textsc{TFP};][]{Abadi.Barham.ea2016, Dillon.Langmore.ea2017}\footnote{We interacted with the \textsc{TFP} using the now depreciated \textsc{PyMC4} package, developed as a successor to \textsc{PyMC3} \citep{Salvatier.Wiecki.ea2016}}. For each model, we produced \num{20000} samples split across \num{10} MCMC chains and computed summary statistics for the marginalised posteriors of each parameter in the model. We removed stars with problems during tuning using the Gelman-Rubin diagnostic \citep[$\hat{r}$;][]{Gelman.Rubin1992}. We used results from each model once $\hat{r} < 1.04$ for all parameters, indicating good model convergence.
+We obtained results for each of the models described above by sampling their posterior distributions using a Markov chain Monte Carlo (MCMC) algorithm. In particular, we used the NUTS algorithm implemented in \textsc{TensorFlow Probability} \citep[\textsc{TFP};][]{Abadi.Barham.ea2016, Dillon.Langmore.ea2017}\footnote{We interacted with the \textsc{TFP} using the now deprecated \textsc{PyMC4} package, developed as a successor to \textsc{PyMC3} \citep{Salvatier.Wiecki.ea2016}}. For each model, we produced \num{20000} samples split across \num{10} MCMC chains and computed summary statistics for the marginalised posteriors of each parameter in the model. We removed stars with problems during tuning using the Gelman-Rubin diagnostic \citep[$\hat{r}$;][]{Gelman.Rubin1992}. We used results from each model once $\hat{r} < 1.04$ for all parameters, indicating good model convergence.
 
 Initially, we created a random synthetic population of stars using MESA to test the ability of the method to recover stellar properties according to our choice of model physics and population priors. We tested the NP, PP and MP models. Since our sample was fictitious, it would not have been appropriate to include real solar data. We summarise the results for the synthetic stellar parameters and hyperparameters in Appendix \ref{sec:test-stars}. We found that the models were able to recover the true synthetic properties accurately, with increased precision when pooling parameters.
 
