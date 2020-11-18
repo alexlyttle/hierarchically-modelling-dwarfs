@@ -606,7 +606,7 @@ Once we had tested the method on synthetic stars, we obtained results for the sa
 
 Since our initial sample was chosen based on masses from \citetalias{Serenelli.Johnson.ea2017}, we expected some stars to lie outside (or near the boundary) of the observational parameter space provided by our grid of stellar models. We used an initial run of the NP model to catch and remove these stars. During the initial run, we dropped 16 of the 81 stars from the sample. Of the removed stars, we found the posteriors in $M$ for 6 skewed towards the prior upper mass limit of \SI{1.2}{\solarmass}. The remaining 10 removed stars suffered poor convergence during sampling ($\hat{r} >> 1.04$) which could be because of poor step-size tuning and sampling at the prior boundary.
 
-Out of the remaining 65 stars with results from the NP model, 2 stars were dropped from the PP model. A consequence of partially pooling parameters is that a population spread, $\sigma$ allows for individual parameters to vary outside of the prior range given to the population mean, $\mu$. In this case, individual stellar $\mlt$ was allowed to vary outside the range for which the ANN was valid if $\sigma_\alpha$ was large. The 2 removed stars happened to have high likelihoods outside of the valid $\mlt$ range. We found that removing the same 2 stars from the other models made negligible difference to the results, so we leave a solution to this problem to future work. Naturally, we did not see the same issue in the MP model, so we proceeded with modelling the same 65 stars as with the NP model.
+Out of the remaining 65 stars with results from the NP model, 2 stars were dropped from the PP model. A consequence of partially pooling parameters is that a population spread, $\sigma$ allows for individual parameters to vary outside of the prior range given to the population mean, $\mu$. In this case, individual stellar $\mlt$ was allowed to vary outside the range for which the ANN was valid if $\sigma_\alpha$ was large. The 2 removed stars happened to have high likelihoods outside of the valid $\mlt$ range. We found that removing the same 2 stars from the other models made negligible difference to the results, so we leave a solution to this problem to fu  ture work. Naturally, we did not see the same issue in the MP model, so we proceeded with modelling the same 65 stars as with the NP model.
 
 \section{Results}\label{sec:res}
 %%%%%%%%%%%%%%%
@@ -1059,16 +1059,18 @@ Figure \ref{fig:test-corners-mp} shows the hyperparameter results for the MP mod
 % \end{figure*}
 % %
 
-\section{The solar calibrator}\label{sec:sun-res}
+\section{The Sun as a star}\label{sec:sun-res}
 
-We found that our model consistently recovers the Sun when modelled in each of the NP, PP and MP models. In Table \ref{tab:sun-out} we present the results for the Sun as a star from the NP model to show what we obtain without the influence of any other stars in the sample. We show the marginal and joint posterior distributions for the solar parameters from the NP model in the corner plot in Figure \ref{fig:sun-results}.
+Our model consistently recovers the Sun when modelled in each of the NP, PP and MP models. In Table \ref{tab:sun-out} we present the results for the Sun as a star from the NP model to show what we obtain without the influence of any other stars in the sample. We show the marginal and joint posterior distributions for the solar parameters from the NP model in the corner plot in Figure \ref{fig:sun-results}.
 
-\begin{table}
+We found some differences between $\mlt$ from our solar model and solar calibrations in the literature produced using \textsc{MESA} with similar input physics. For example, the solar calibration in \citet{Stancliffe.Fossati.ea2016} using \citet{Asplund.Grevesse.ea2009} abundances yields compatible initial abundances, $Z_\mathrm{init} = 0.0149$ and $Y_\mathrm{init} = 0.266$ but $\mlt = 1.783$ which differs from our results by about 10-$\sigma$. This is likely because of a few differences in observed values used for the calibration. \citet{Stancliffe.Fossati.ea2016} used observed helium abundance and convection zone depth measurements from helioseismology. Furthermore, solar calibrations typically include convective envelope overshooting. Presuming overshooting increases mixing in the star, we might expect a lower $\mlt$ to compensate this. Therefore, we stress that the addition of the Sun as a star in our model is with the assumption of our choice of input physics.
+
+\begin{table*}
     \centering
     \caption{Solar results from the NP model. The second column shows the median marginalised posterior samples for each parameter with their respective upper and lower 68 per cent credible intervals.}
     \label{tab:sun-out}
     \input{sun_outputs.tex}
-\end{table}
+\end{table*}
 
 % \begin{figure*}
 %     \centering
