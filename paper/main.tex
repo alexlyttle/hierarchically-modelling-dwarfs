@@ -307,7 +307,7 @@ An ANN is a network of artificial \emph{neurons} which each transform some input
 In this work, we considered a fully-connected ANN, where each neuron in layer $j-1$ is connected to every neuron in layer $j$. The output of the $k$-th neuron in layer $j$ is, 
 %
 \begin{equation}
-    x_{j, k}=f_j(\boldsymbol{w}_{j, k} \cdot \boldsymbol{x}_{j-1} + b_{j, k})
+    x_{j, k}=f_j(\boldsymbol{w}_{j, k} \cdot \boldsymbol{x}_{j-1} + b_{j, k}),
 \end{equation}
 %
 where $f_j$ is the \emph{activation} function for the $j$-th layer, $\boldsymbol{w}_{j, k}$ are the weights connecting all the neurons in layer $j-1$ to the current neuron, and $b_{j, k}$ is the bias. This generalises such that the output of the $j$-th layer is,
@@ -319,7 +319,7 @@ where $f_j$ is the \emph{activation} function for the $j$-th layer, $\boldsymbol
 where $\boldsymbol{W}_j$ is the matrix of weights leading to all neurons in the $j$-th layer. For a regression ANN, we typically have a linear activation function applied to the final output layer. Layers of neurons between the input and output layers are called \emph{hidden} layers. Therefore, the output of a network of $H$ hidden layers with initial input $\boldsymbol{\mathbb{X}}$ is,
 %
 \begin{equation}
-    \widetilde{\boldsymbol{\mathbb{Y}}} = \boldsymbol{W}_{H} \cdot f_{H-1}(\dots f_1(\boldsymbol{W}_1 \cdot f_0(\boldsymbol{W}_{0} \cdot \boldsymbol{\mathbb{X}} + \boldsymbol{b}_{0}) + \boldsymbol{b}_1) ) + \boldsymbol{b}_{H}
+    \widetilde{\boldsymbol{\mathbb{Y}}} = \boldsymbol{W}_{H} \cdot f_{H-1}(\dots f_1(\boldsymbol{W}_1 \cdot f_0(\boldsymbol{W}_{0} \cdot \boldsymbol{\mathbb{X}} + \boldsymbol{b}_{0}) + \boldsymbol{b}_1) ) + \boldsymbol{b}_{H}.
 \end{equation}
 %
 We also restricted our configuration to an ANN with the same number of neurons, $N$ in each hidden layer. Hereafter, we refer to our choice of neurons per layer, $N$ and hidden layers, $H$ as the \emph{architecture} (see Figure \ref{fig:net}).
@@ -426,7 +426,7 @@ Our first model was equivalent to modelling each star individually and featured 
 Firstly, we constructed a model comprising independent parameters $\boldsymbol{\theta}_i = \{f_{\mathrm{evol}, i}, M_i, \alpha_{\mathrm{MLT},i}, Y_i, Z_i\}$ for a given star, $i$. Using Bayes' theorem, the \emph{posterior} probability density function (PDF) of the model parameters given a set of observed data, $\boldsymbol{d}_i$ is,
 %
 \begin{equation}
-    p(\boldsymbol{\theta}_i | \boldsymbol{d}_i) \propto p(\boldsymbol{\theta}_i) \, p(\boldsymbol{d}_i | \boldsymbol{\theta}_i),
+    p(\boldsymbol{\theta}_i | \boldsymbol{d}_i) \propto p(\boldsymbol{\theta}_i) \, p(\boldsymbol{d}_i | \boldsymbol{\theta}_i)\,,
     \label{eq:bayes}
 \end{equation}
 %
@@ -518,7 +518,7 @@ Therefore, we may write the prior PDF of initial helium given its population-lev
 Similarly, for the second component of Equation \ref{eq:ppool}, we chose to partially-pool $\mlt$. We assume that convection in stars of a similar mass, evolutionary stage and area of the HR diagram may be approximated using a similar value of $\mlt$, but the accuracy of the mixing-length theory may vary from star-to-star. There is theoretical evidence for such a variation with $\metallicity$, $\teff$ and $\log{g}$ in 3D hydrodynamical stellar models \citep{Magic.Weiss.ea2015,Viani.Basu.ea2018}. However, investigating such dependencies are beyond this scope of this paper. Given the small range of our sample, any such variation will be absorbed by the spread parameter, $\sigma_\alpha$. Therefore, we decided to describe the prior on $\boldsymbol{\alpha}_\mathrm{MLT}$ as,
 %
 \begin{equation}
-    p(\boldsymbol{\alpha}_{\mathrm{MLT}} | \mu_\alpha, \sigma_\alpha) = \prod_{i=1}^{N_\mathrm{stars}} \mathcal{N}({\alpha}_{\mathrm{MLT}, i} | \mu_\alpha, \sigma_\alpha)
+    p(\boldsymbol{\alpha}_{\mathrm{MLT}} | \mu_\alpha, \sigma_\alpha) = \prod_{i=1}^{N_\mathrm{stars}} \mathcal{N}({\alpha}_{\mathrm{MLT}, i} | \mu_\alpha, \sigma_\alpha).
 \end{equation}
 %
 
@@ -562,7 +562,7 @@ We built another hierarchical model similar to the PP model except that $\mlt$ i
 %
 where,
 \begin{equation}
-    \mlt \sim 1.5 + \mathcal{B}(1.2, 1.2).
+    \mlt \sim 1.5 + \mathcal{B}(1.2, 1.2),
 \end{equation}
 % %
 % \begin{equation}
@@ -598,7 +598,7 @@ For both the PP and MP models, we iterated with and without data for the Sun inc
 
 \subsection{Sampling}
 
-We obtained results for each of the models described above by sampling their posterior distributions using a Markov chain Monte Carlo (MCMC) algorithm. In particular, we used the NUTS algorithm implemented in \textsc{TensorFlow Probability} \citep[\textsc{TFP};][]{Abadi.Barham.ea2016, Dillon.Langmore.ea2017}\footnote{We interacted with the \textsc{TFP} using the now deprecated \textsc{PyMC4} package, developed as a successor to \textsc{PyMC3} \citep{Salvatier.Wiecki.ea2016}}. For each model, we produced \num{20000} samples split across \num{10} MCMC chains and computed summary statistics for the marginalised posteriors of each parameter in the model. We removed stars with problems during tuning using the Gelman-Rubin diagnostic \citep[$\hat{r}$;][]{Gelman.Rubin1992}. We used results from each model once $\hat{r} < 1.04$ for all parameters, indicating good model convergence.
+We obtained results for each of the models described above by sampling their posterior distributions using a Markov chain Monte Carlo (MCMC) algorithm. In particular, we used the NUTS algorithm implemented in \textsc{TensorFlow Probability} \citep[\textsc{TFP};][]{Abadi.Barham.ea2016, Dillon.Langmore.ea2017}\footnote{We interacted with the \textsc{TFP} using the now deprecated \textsc{PyMC4} package, developed as a successor to \textsc{PyMC3} \citep{Salvatier.Wiecki.ea2016}.}. For each model, we produced \num{20000} samples split across \num{10} MCMC chains and computed summary statistics for the marginalised posteriors of each parameter in the model. We removed stars with problems during tuning using the Gelman-Rubin diagnostic \citep[$\hat{r}$;][]{Gelman.Rubin1992}. We used results from each model once $\hat{r} < 1.04$ for all parameters, indicating good model convergence.
 
 Initially, we created a random synthetic population of stars using MESA to test the ability of the method to recover stellar properties according to our choice of model physics and population priors. We tested the NP, PP and MP models. Since our sample was fictitious, it would not have been appropriate to include real solar data. We summarise the results for the synthetic stellar parameters and hyperparameters in Appendix \ref{sec:test-stars}. We found that the models were able to recover the true synthetic properties accurately, with increased precision when pooling parameters.
 
