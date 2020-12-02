@@ -392,21 +392,21 @@ After extensive tuning, we opted for an ANN with $N=128$ neurons in each of $H=6
 
 The test dataset contained $\sim \num{2e6}$ models evolved in the same way as the training dataset but with initial conditions at the midpoint of those in the grid. We made predictions for the test dataset, deriving luminosity from the output radius and effective temperature, using the final trained ANN as described in Section \ref{sec:opt}. We then evaluated the accuracy of the ANN by taking the difference between the test truth and ANN prediction, $x_\mathrm{true} - x_\mathrm{pred}$. 
 
-\begin{table}
+\begin{table*}
 	\centering
-	\caption{The median error, $\mu_{1/2}$ and median absolute deviation of the error, $\sigma_\mathrm{MAD} = 1.4826\cdot\mathrm{median}(|E(x) - \mu_{1/2}|)$ for a given parameter, $x$, derived from the output of the ANN. The error, $E(x)$, is given in the first column and $\delta x$ is the truth provided by the test dataset subtracted from the ANN prediction. Fractional errors are given as percentages (\%).}
+	\caption{The median error, $\mu_{1/2}$ and median absolute deviation of the error, $\sigma_\mathrm{MAD} = 1.4826\cdot\mathrm{median}(|E(\mathbb{Y}) - \mu_{1/2}|)$ for a given ANN output parameter, $\mathbb{Y}$ from the test dataset. The error, $E(\mathbb{Y})$, is given in the table header, where $\delta \mathbb{Y} = \widetilde{\mathbb{Y}} - \mathbb{Y}$.}
 	\label{tab:test}
-    \input{test}    
-\end{table}
+    \input{test_random}    
+\end{table*}
 
-We found good agreement between the test dataset and ANN predictions, within typical observational uncertainties. We noted that the largest errors lay at the boundaries of the training data and in areas sparsely populated by the grid. This is apparent in Figure \ref{fig:test} where we plot the test error against each parameter. For example, the spread in error increases at high temperatures which may be attributed to poor sampling of the high-mass MS turn-off ``hook'' by the stellar evolutionary models. Otherwise, the accuracy is very good within the observed range covered by our sample of 81 dwarfs and subgiants. Hence, we chose the median absolute deviation (MAD) as an estimator of the spread in error, because it is less sensitive to outliers than the standard deviation.
+We found good agreement between the test dataset and ANN predictions, within typical observational uncertainties. We noted that the largest errors lay at the boundaries of the training data and in areas sparsely populated by the grid. This is apparent in Figure \ref{fig:test} where we plot the test error against each parameter. For example, the spread in error increases for $\metallicity_\mathrm{surf} < -0.5$ where training data is sparse at the edge of the grid. However, the accuracy is very good within the observed range covered by our sample of 81 dwarfs and subgiants. Hence, we chose the median absolute deviation (MAD) as an estimator of the spread in error because it is less sensitive to large errors at the grid boundary than the standard deviation.
 
-To represent the accuracy of the ANN, we present the median, $\mu_{1/2}$ and MAD estimator, $\sigma_\mathrm{MAD} = 1.4826\cdot\mathrm{median}(|E(x) - \mu_{1/2}|)$ of the error ($E(x)$) in Table \ref{tab:test}. The median is close to zero for all parameters, showing little systematic bias in the ANN. The MAD is also lower than observational uncertainties quoted in Section \ref{sec:data}. Although the error in $\dnu$ is $\sim \SI{0.1}{\mu\Hz}$ is comparable to observations with the best signal-to-noise, this error is random throughout the test data and should not produce any systematic bias.
+To represent the accuracy of the ANN, we present the median, $\mu_{1/2}$ and MAD estimator, $\sigma_\mathrm{MAD} = 1.4826\cdot\mathrm{median}(|E(x) - \mu_{1/2}|)$ of the error ($E(x)$) in Table \ref{tab:test}. The median is close to zero for all parameters, showing little systematic bias in the ANN. The MAD is also lower than observational uncertainties quoted in Section \ref{sec:data}. The spread in error for $\dnu$ of $\SI{0.06}{\mu\Hz}$ is comparable to a small number of observations with the best signal-to-noise. However, the error in $\dnu$ predictions is also comparable to other systematic uncertainties in $\dnu$ discussed in Section \ref{subsec:seismo_model}. Therefore, a robust model which takes account of systematic uncertainties pertaining to $\dnu$, including those from the ANN, will be explored in future work (Carboneau et al. in preparation).
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/test.png}
-    \caption{\emph{Left}: the rolling error between the test dataset (\emph{true}) and the ANN predictions (\emph{pred}) plotted against each parameter, where $\delta x = x_\mathrm{pred} - x_\mathrm{true}$ for a given output $x$. \emph{Right}: a kernel density estimate (KDE) of the test error and a normal distribution centred on the median, $\mu_{1/2}$ with an estimator for the standard deviation from the median absolute deviation, $\sigma_\mathrm{MAD}$.}
+    \includegraphics[width=\linewidth]{figures/test_random.png}
+    \caption{\emph{Left}: the rolling error between a given parameter in the test dataset ($\mathbb{Y}$) and the ANN prediction for that parameter ($\widetilde{\mathbb{Y}}$) where $\delta \mathbb{Y} = \widetilde{\mathbb{Y}} - \mathbb{Y}$. \emph{Right}: a kernel density estimate (KDE) of the error and a normal distribution centred on the median, $\mu_{1/2}$ with an estimator for the standard deviation from the median absolute deviation, $\sigma_\mathrm{MAD}$.}
     \label{fig:test}
 \end{figure}
 
