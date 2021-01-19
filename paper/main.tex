@@ -91,14 +91,13 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[Hierarchically modelling dwarfs and subgiants]{
+\title[Hierarchically modelling dwarfs and subgiants]{%
     Hierarchically modelling \emph{Kepler} dwarfs and subgiants to improve inference of stellar properties with asteroseismology
-    %TBC: Using machine learning of stellar models to constrain the Helium enrichment of low-mass \emph{Kepler} dwarfs in the solar neighbourhood
-    }
+}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
-\author[A. J. Lyttle et al.]{
+\author[A. J. Lyttle et al.]{%
 Alexander J. Lyttle,$^{1,2}$\thanks{E-mail: ajl573@student.bham.ac.uk}
 Guy R. Davies,$^{1,2}$
 Tanda Li,$^{1,2}$
@@ -109,16 +108,28 @@ Harry Westwood,$^{1,2}$
 William J. Chaplin,$^{1,2}$
 Oliver J. Hall,$^{4,1,2}$
 \newauthor
-Daniel Huber,
+Daniel Huber,$^{5}$
 Andrea Miglio,$^{1,2}$
 Martin B. Nielsen,$^{1,2}$
-and To B. Confirmed
+Sarbani Basu,$^{6}$
+\newauthor
+Will M. Farr,$^{7,8}$
+Rafael A. Garc\'ia,$^{9}$
+Ilya Mandel,$^{10}$
+and Sean Matt$^{11}$
 \\
 % List of institutions
 $^{1}$School of Physics and Astronomy, University of Birmingham, Birmingham, B15 2TT, UK\\
 $^{2}$Stellar Astrophysics Centre (SAC), Department of Physics and Astronomy, Aarhus University, Ny Munkegade 120, DK-8000 Aarhus C, Denmark\\
 $^{3}$School of Physics and Astronomy, University of St Andrews, North Haugh, St Andrews, KY16 9SS, UK\\
 $^{4}$European Space Agency (ESA), European Space Research and Technology Centre (ESTEC), Keplerlaan 1, 2201 AZ Noordwijk, Netherlands\\
+$^{5}$Institute for Astronomy, University of Hawai'i, 2680 Woodlawn Drive, Honolulu, HI 96822, USA\\
+$^{6}$Department of Astronomy, Yale University, 52 Hillhouse Avenue, New Haven, CT 06511, USA\\
+$^{7}$Center for Computational Astrophysics, Flatiron Institute, 162 5th Avenue, New York, New York 10010, USA\\
+$^{8}$Department of Physics and Astronomy, Stony Brook University, Stony Brook, New York 11794, USA\\
+$^{9}$AIM, CEA, CNRS, Universit\'e Paris-Saclay, Universit\'e Paris Diderot, Sorbonne Paris Cit\'e, 91191, Gif-sur-Yvette, France\\
+$^{10}$Monash Centre for Astrophysics, School of Physics and Astronomy, Monash University, Clayton, VIC 3800, Australia\\
+$^{11}$Department of Physics and Astronomy, University of Exeter, Stocker Road, Exeter, EX4 4QL, UK
 }
 
 % These dates will be filled out by the publisher
@@ -135,7 +146,7 @@ $^{4}$European Space Agency (ESA), European Space Research and Technology Centre
 
 % Abstract of the paper <= 250 words
 \begin{abstract}
-    With recent advances in modelling stars using high-precision asteroseismology, the systematic effects associated with our assumptions of stellar helium abundance ($Y$) and the mixing-length theory parameter ($\mlt$) are becoming more important. We apply a new method to improve the inference of stellar parameters for a sample of \emph{Kepler} dwarfs and subgiants across a narrow mass range ($0.8 < M < \SI{1.2}{\solarmass}$). In this method, we include a statistical treatment of $Y$ and the $\mlt$. We develop a hierarchical Bayesian model to encode information about the distribution of $Y$ and $\mlt$ in the population, fitting a linear helium enrichment law including an intrinsic spread around this relation and normal distribution in $\mlt$. We test various levels of pooling parameters, with and without solar data as a calibrator. When including the Sun as a star, we find the gradient for the enrichment law, $\Delta Y / \Delta Z = 1.05\substack{+0.28\\-0.25}$ and the mean $\mlt$ in the population, $\mu_\alpha = 1.90\substack{+0.10\\-0.09}$. While accounting for the uncertainty in $Y$ and $\mlt$, we are still able to report statistical uncertainties of 2.5 per cent in mass, 1.2 per cent in radius, and 12 per cent in age. Our method can also be applied to larger samples which will lead to improved constraints on both the population level inference and the star-by-star fundamental parameters. We show that more work is needed to study the validity of using the Sun as a calibrator for $Y$ and $\mlt$.
+    With recent advances in modelling stars using high-precision asteroseismology, the systematic effects associated with our assumptions of stellar helium abundance ($Y$) and the mixing-length theory parameter ($\mlt$) are becoming more important. We apply a new method to improve the inference of stellar parameters for a sample of \emph{Kepler} dwarfs and subgiants across a narrow mass range ($0.8 < M < \SI{1.2}{\solarmass}$). In this method, we include a statistical treatment of $Y$ and the $\mlt$. We develop a hierarchical Bayesian model to encode information about the distribution of $Y$ and $\mlt$ in the population, fitting a linear helium enrichment law including an intrinsic spread around this relation and normal distribution in $\mlt$. We test various levels of pooling parameters, with and without solar data as a calibrator. When including the Sun as a star, we find the gradient for the enrichment law, $\Delta Y / \Delta Z = 1.05\substack{+0.28\\-0.25}$ and the mean $\mlt$ in the population, $\mu_\alpha = 1.90\substack{+0.10\\-0.09}$. While accounting for the uncertainty in $Y$ and $\mlt$, we are still able to report statistical uncertainties of 2.5 per cent in mass, 1.2 per cent in radius, and 12 per cent in age. Our method can also be applied to larger samples which will lead to improved constraints on both the population level inference and the star-by-star fundamental parameters.% We show that more work is needed to study the validity of using the Sun as a calibrator for $Y$ and $\mlt$.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -151,9 +162,9 @@ asteroseismology -- stars: fundamental parameters -- stars: low-mass -- stars: o
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-%%%%%%%%%%%%%%%%%%%%
-%%% INTRODUCTION %%%
-%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%
 
 The inference of stellar ages, masses and radii has improved through the use of asteroseismology in recent years \citep[e.g. see the review by][]{Chaplin.Miglio2013}. Measuring the oscillation modes in stars using photometric time series data, from missions such as \emph{CoRoT} \citep{Baglin.Auvergne.ea2006}, \emph{Kepler} \citep{Borucki.Koch.ea2010} and \emph{TESS} \citep{Ricker.Winn.ea2015} has given us new insights into the structure and evolution of stars. Recent examples include a deeper understanding of stellar structure \citep{Verma.Raodeo.ea2017}, chronology of a Milky Way merger \citep{Chaplin.Serenelli.ea2020} and classifying exoplanetary systems \citep{Huber.Chaplin.ea2019}. Several studies used grids of stellar models with constraints from asteroseismology to produce catalogues of precise stellar parameters \citep{Pinsonneault.Elsworth.ea2014, SilvaAguirre.Lund.ea2017}. However, with increasing precision on fundamental parameters inferred from stellar models with asteroseismology, extra care should be taken to ensure that we are accounting for uncertainty in our choice of stellar physics.
 
@@ -174,9 +185,9 @@ Our HBM requires a way to map from the stellar initial (or bulk) properties to p
 In Section \ref{sec:data}, we describe the data for the sample of 81 \emph{Kepler} dwarfs and subgiants studied in this work. We then present the methods in Section \ref{sec:meth} for which we produced a large grid of stellar evolutionary models to use as training data for an ANN (see Sections \ref{sec:grid} and \ref{sec:ann} respectively). We use the ANN as an emulator in a series of statistical models described in Section \ref{sec:hbm} to model the sample and present our results in Section \ref{sec:res}. Finally, in Section \ref{sec:dis} we discuss the results from each model and compare them to results for the sample of stars in the literature.
 
 \section{Data}\label{sec:data}
-%%%%%%%%%%%%
-%%% DATA %%%
-%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% DATA %%%%%%%%%%%%%%%%%%
 
 For this study, we selected the sample of 415 stars from the first APOKASC catalogue of dwarfs and subgiants \citep[][hereafter \citetalias{Serenelli.Johnson.ea2017}]{Serenelli.Johnson.ea2017}. This sample provides an extensive set of dwarfs and subgiant stars with asteroseismic detections observed by the \emph{Kepler} mission. \citetalias{Serenelli.Johnson.ea2017} used grid-based modelling to determine the ages ($\tau$) masses ($M$) radii ($R$) and surface gravity ($\log g$) of stars in the sample, using global asteroseismic parameters, effective temperature ($\teff$) and metallicity ($\metallicity$) as inputs. 
 
@@ -218,9 +229,9 @@ The final sample comprised 81 stars for which we had complete data for $\teff$, 
 \end{figure}
 
 \section{Methods}\label{sec:meth}
-%%%%%%%%%%%%%%%
-%%% METHODS %%%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% METHODS %%%%%%%%%%%%%%%%%%%%%
 
 Our principle goal was to improve inference of fundamental stellar parameters for our sample of low-mass stars. To achieve this, we constructed a hierarchical Bayesian model (HBM) which utilises a prior assumption of the population distribution to share information between the stars. Based on the work of Davies et al. (in prep.), our HBM is a generative model which requires a function to map bulk stellar parameters to their observables.
 
@@ -613,9 +624,9 @@ Since our initial sample was chosen based on masses from \citetalias{Serenelli.J
 Out of the remaining 65 stars with results from the NP model, 2 stars were dropped from the PP model. A consequence of partially pooling parameters is that a population spread, $\sigma$ allows for individual parameters to vary outside of the prior range given to the population mean, $\mu$. In this case, individual stellar $\mlt$ was allowed to vary outside the range for which the ANN was valid if $\sigma_\alpha$ was large. The 2 removed stars happened to have high likelihoods outside of the valid $\mlt$ range. We found that removing the same 2 stars from the other models made negligible difference to the results, so we leave a solution to this problem to fu  ture work. Naturally, we did not see the same issue in the MP model, so we proceeded with modelling the same 65 stars as with the NP model.
 
 \section{Results}\label{sec:res}
-%%%%%%%%%%%%%%%
-%%% RESULTS %%%
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% RESULTS %%%%%%%%%%%%%%%%%%
 
 % THIS IS RUSHED NEED TO TAKE MORE TIME OR EVEN PUT IN METHODS SECTION
 
@@ -803,9 +814,9 @@ We present the helium enrichment relation resulting from the PPS model in Figure
 % %
 
 \section{Discussion}\label{sec:dis}
-%%%%%%%%%%%%%%%%%%
-%%% DISCUSSION %%%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% DISCUSSION %%%%%%%%%%%%%%%%%%
 
 So far, we have shown that we can add parameters to stellar models without sacrificing statistical uncertainties through the application of an HBM. We freed the $Y_\mathrm{init}$ and $\mlt$ using pooling to encode our prior knowledge of their distribution in the population. We also tested the impact of including the Sun as a star in our population. We first discuss the impact of pooling and our choice of population priors for $Y_\mathrm{init}$ and $\mlt$ in Section \ref{sec:helium} and \ref{sec:mlt}. To assess the accuracy of our model with respect to the literature, we compare our results to those of \citetalias{Serenelli.Johnson.ea2017} in Section \ref{sec:comp}. We found good agreement between this work and their results, despite some differences in observables and stellar model physics which we discuss further. Then, we discuss sources of systematic uncertainties in Section \ref{sec:sys}. Although we have accounted for uncertainties in \ref{sec:helium} and \ref{sec:mlt} in our model, there are still differences between stellar modelling codes and other model physics which should be considered. Finally, in Section \ref{sec:out}, we highlight a possible outlier in our dataset.
 
@@ -896,9 +907,9 @@ KIC 9025370 turned out to be a double-lined spectroscopic binary \citep{Nissen.S
 % \subsection{The potential of pooling}\label{sec:future}
 
 \section{Conclusion}
-%%%%%%%%%%%%%%%%%%
-%%% CONCLUSION %%%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%
 
 We have shown that modelling $Y_\mathrm{init}$ and $\mlt$ to improve inference of fundamental parameters can be done through the use of an HBM, whilst still improving statistical uncertainties. Our results were in good agreement with \citetalias{Serenelli.Johnson.ea2017} with small changes in mass and radii expected from our choice of model physics and updated observables. Taking our partially-pooled model including the Sun (PPS) as our preferred set of results, we obtained median statistical uncertainties on $M$, $R$ and $\tau$ of 2.5, 1.2 and 12 per cent respectively. Furthermore, we demonstrated that the uncertainties reduced with increasing sample size in a population of synthetic stars, giving scope to further improve our inference on larger sample sizes from \emph{TESS}.
 
@@ -911,6 +922,9 @@ As shown in tests with synthetic stars (Appendix \ref{sec:test-stars}) and appar
 Including all-sky data from \emph{TESS} and in anticipation of \emph{PLATO} \citep{Rauer.Catala.ea2014} we can expect our sample size of asteroseismic dwarfs and subgiants only to increase. There is also scope to extend our grid of models to include red giants, for which there are vast catalogues of stars already studied with \emph{Kepler} \citep{Pinsonneault.Elsworth.ea2018}.
 
 \section*{Acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%
 
 This work is a part of a project that has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (CartographY; grant agreement ID 804752).
 
@@ -929,16 +943,10 @@ This work is a part of a project that has received funding from the European Res
 
 \appendix
 
-% \section{Grid of stellar models}
-
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=\linewidth]{figures/context_grid.png}
-%     \caption{The luminosity, $L$ against effeective temperature, $\teff$ of the sample of 81 \emph{Kepler} dwarfs and subgiants plot against a subset of the grid of stellar models computed in Section \ref{sec:grid}. The top plot is coloured by stellar surface metallicity and the bottom plot is coloured by stellar mass.}
-%     \label{fig:data-grid}
-% \end{figure}
-
 \section{Training the ANN}\label{sec:apx-train}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% TRAINING THE ANN %%%%%%%%%%%%%%%%%%
 
 In Table \ref{tab:std} we give the scaling parameters used to standardise our training dataset. We determined the median, $\mu_{1/2}$ and standard deviation, $\sigma$ to 3 decimal places for each of the input and output dimensions. We then standardised the data by subtracting $\mu_{1/2}$ and dividing by $\sigma$. In Figure \ref{fig:loss} we show the train and validation MAE as a function of epochs for the final ANN configuration. The train and validation loss were comparable throughout training.
 
@@ -956,6 +964,9 @@ In Table \ref{tab:std} we give the scaling parameters used to standardise our tr
 \end{figure}
 
 \section{The synthetic population}\label{sec:test-stars}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% THE SYNTHETIC POPULATION %%%%%%%%%%%%%%%%%%
 
 In this section, we present the results for the NP, PP and MP models run on a synthetic sample of 100 stars with the following initial conditions. We randomly generated initial $M$ and $\metallicity_\mathrm{init}$ uniformly. We drew initial values for $Y_\mathrm{init}$ from a normal distribution centred on the helium enrichment law from Equation \ref{eq:helium} with $\Delta Y / \Delta Z = 1.8$ and $Y_P = 0.247$, and scaled by $\sigma_Y = 0.008$. We also generated initial values for $\mlt$ from a normal distribution centred on $\mu_\alpha = 2.0$ and scaled by $\sigma_\alpha = 0.08$.
 
@@ -1057,6 +1068,9 @@ Figure \ref{fig:test-corners-mp} shows the hyperparameter results for the MP mod
 % %
 
 \section{The Sun as a star}\label{sec:sun-res}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% THE SUN AS A STAR %%%%%%%%%%%%%%%%%%
 
 Our model consistently recovers the Sun when modelled in each of the NP, PP and MP models. In Table \ref{tab:sun-out} we present the results for the Sun as a star from the NP model to show what we obtain without the influence of any other stars in the sample. We show the marginal and joint posterior distributions for the solar parameters from the NP model in the corner plot in Figure \ref{fig:sun-results}.
 
