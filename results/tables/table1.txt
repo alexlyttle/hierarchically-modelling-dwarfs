@@ -1,3 +1,25 @@
+Title: Hierarchically modelling Kepler dwarfs and subgiants to improve inference of
+       stellar properties with asteroseismology
+Authors: Alexander J. Lyttle, Guy R. Davies, Tanda Li, Lindsey M. Carboneau,
+	  Ho-Hin Leung, Harry Westwood, William J. Chaplin, Oliver J. Hall,
+	  Daniel Huber, Martin B. Nielsen, Sarbani Basu, and Rafael A. García
+Table: The observables and their respective uncertainties for the sample of 81 
+       stars.
+================================================================================
+Byte-by-byte description
+--------------------------------------------------------------------------------
+  Bytes   Format Units  Label    Explanations
+--------------------------------------------------------------------------------
+  1- 11   A11    ---    name     Star identifier
+ 13- 30   F18.13 K      teff     [5236.78/6442.84] Effective temperature
+ 32- 49   F18.14 K      teff_err [97.2/159.64] uncertainty
+ 51- 68   F18.16 solLum lum      [0.59/5.11] Luminosity
+ 70- 89   F20.18 solLum lum_err  [0.02/0.31] uncertainty
+ 91-109   F19.15 uHz    dnu      [45.46/153.16] Large frequency separation
+111-129   F19.17 uHz    dnu_err  [0.06/8.56] uncertainty
+131-150   F20.17 dex    mhs      [-0.39/0.41] Surface metallicity
+152-170   F19.17 dex    mhs_err  [0.03/0.09] uncertainty
+--------------------------------------------------------------------------------
 KIC10079226 5928.8413000000000 124.83662400000000 1.5710737174019656 0.048691458313116172 116.036000000000001 0.73499999999999999  0.15894459000000000 0.07439805599999999
 KIC10215584 5666.9160000000002 119.33369999999999 1.6365683300837293 0.062670420770023938 115.157999999999987 2.83399999999999963  0.04301389300000000 0.06886365000000000
 KIC10319352 5456.1689999999999 106.65401000000000 1.8481809027076408 0.056483101523150836  78.746000000000024 1.73199999999999998  0.26517492999999998 0.06476182000000000
