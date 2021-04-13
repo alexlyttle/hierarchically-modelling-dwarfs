@@ -1,0 +1,8 @@
+2021-04-12 15:21:26,859: INFO: Fitting star for 2000 samples across 10 chains with 100 burn in steps per chain.
+2021-04-12 15:21:26,911: INFO: Auto-assigning NUTS sampler
+2021-04-12 15:21:26,977: WARNING: From /Users/ajl573/.virtualenvs/stellr/lib/python3.8/site-packages/pymc4/mcmc/samplers.py:131: compile (from tensorflow.python.compiler.xla.xla) is deprecated and will be removed in a future version.
+Instructions for updating:
+xla.experimental.compile is deprecated. Consider using tf.function(jit_compile=True)
+2021-04-12 15:21:56,717: WARNING: From /Users/ajl573/.virtualenvs/stellr/lib/python3.8/site-packages/tensorflow/python/ops/array_ops.py:5039: calling gather (from tensorflow.python.ops.array_ops) with validate_indices is deprecated and will be removed in a future version.
+Instructions for updating:
+The `validate_indices` argument has no effect. Indices are always validated on CPU and never validated on GPU.
