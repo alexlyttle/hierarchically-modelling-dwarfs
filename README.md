@@ -44,8 +44,11 @@ The paper has been accepted and will be uploaded to the arXiv shortly.
 The preferred way to contact me with issues directly related to the code in this repository is by [submitting an issue](https://github.com/alexlyttle/hierarchically-modelling-dwarfs/issues). Otherwise, see the contact information below:
 
 Name: Alex Lyttle
+
 Email: ajl573@student.bham.ac.uk
+
 GitHub: [alexlyttle](https://github.com/alexlyttle)
+
 Twitter: [@_alexlyttle](https://twitter.com/_alexlyttle)
 
 ## Acknowledgments
