@@ -1,5 +1,7 @@
 # Hierarchically Modelling Dwarfs
 
+[![DOI](https://zenodo.org/badge/305650080.svg)](https://zenodo.org/badge/latestdoi/305650080) [![arXiv badge](https://img.shields.io/badge/arXiv-2105.04482-red)](https://arxiv.org/abs/2105.04482)
+
 Using machine learning to hierarchically model the first APOKASC catalogue of *Kepler* dwarf and subgiant stars ([Serenelli et al. 2017](https://ui.adsabs.harvard.edu/abs/2017ApJS..233...23S/abstract)). A new method which encodes the population distribution of helium and mixing-length parameter in the solar neighbourhood.
 
 - [Hierarchically Modelling Dwarfs](#hierarchically-modelling-dwarfs)
@@ -37,7 +39,7 @@ This repo is not intended to be regularly maintained but contributions are welco
 
 ## Paper
 
-The paper has been accepted and will be uploaded to the arXiv shortly.
+Lyttle et al. (2021; [preprint](https://arxiv.org/abs/2105.04482))
 
 ## Contact
 
