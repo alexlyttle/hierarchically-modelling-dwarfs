@@ -46,3 +46,6 @@ output/
 # Misc
 *.bak
 *.sav
+
+*.tar
+*.tar.gz
